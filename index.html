@@ -1,127 +1,253 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>git push origin heart --force ❤️</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .code-font { font-family: 'Fira Code', monospace; }
-        .cat-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
-    </style>
-</head>
-<body class="bg-[#0d1117] text-[#c9d1d9] min-h-screen flex flex-col">
-
-    <!-- GitHub Header Navbar -->
-    <header class="bg-[#161b22] border-b border-[#30363d] px-4 py-3 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-            <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            <span class="font-semibold text-white text-lg">crush / <span class="text-pink-400">for-you.git</span></span>
-            <span class="text-xs px-2 py-0.5 rounded-full bg-[#30363d] text-[#8b949e] border border-[#484f58]">Public</span>
-        </div>
-        <div class="flex items-center space-x-3 text-sm">
-            <button class="bg-[#21262d] border border-[#30363d] px-3 py-1 rounded-md text-white hover:bg-[#30363d]">⭐ Star <span class="bg-[#30363d] px-1.5 py-0.2 rounded text-xs ml-1">1.4k</span></button>
-            <button class="bg-[#21262d] border border-[#30363d] px-3 py-1 rounded-md text-white hover:bg-[#30363d]">🍴 Fork <span class="bg-[#30363d] px-1.5 py-0.2 rounded text-xs ml-1">99+</span></button>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <main class="max-w-6xl mx-auto p-4 md:p-8 flex-grow w-full">
-
-        <!-- Repo Subnav Tabs -->
-        <div class="flex border-b border-[#30363d] mb-6 space-x-6 text-sm">
-            <a href="#" class="border-b-2 border-pink-500 pb-3 font-semibold text-white flex items-center space-x-2"><span>📁 Code</span></a>
-            <a href="#" class="text-[#8b949e] hover:text-white pb-3 flex items-center space-x-2" onclick="alert('Commits history: 1) Initial commit (fixed typo in my heart), 2) Added infinite cat pictures, 3) Realized you are way out of my league but shooting my shot anyway')">📜 Commits <span class="bg-[#30363d] px-1.5 py-0.2 rounded-full text-xs">3</span></a>
-            <a href="#" class="text-[#8b949e] hover:text-white pb-3 flex items-center space-x-2" onclick="alert('Pull Requests: 1 open PR awaiting your approval: Merge heart into your life (Status: Pending your decision)')">🔀 Pull Requests <span class="bg-pink-900 text-pink-200 px-1.5 py-0.2 rounded-full text-xs">1</span></a>
-        </div>
-
-        <!-- Repository File Structure Banner -->
-        <div class="bg-[#161b22] border border-[#30363d] rounded-t-lg p-3 flex items-center justify-between text-xs text-[#8b949e]">
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-white">main</span>
-                <span>•</span>
-                <span>3 files • 1,000,000 lines of pure affection</span>
-            </div>
-            <div class="code-font text-pink-400">Last commit: fix(heart): successfully fell for you</div>
-        </div>
-
-        <!-- File Explorer Table -->
-        <div class="border border-t-0 border-[#30363d] rounded-b-lg bg-[#0d1117] mb-8 overflow-hidden">
-            <div class="grid grid-cols-12 px-4 py-2.5 border-b border-[#30363d] bg-[#161b22] text-xs font-semibold text-[#8b949e]">
-                <div class="col-span-6">Name</div>
-                <div class="col-span-4">Last commit message</div>
-                <div class="col-span-2 text-right">Updated</div>
-            </div>
-            <!-- File 1 -->
-            <div onclick="switchTab('readme')" class="grid grid-cols-12 px-4 py-3 border-b border-[#30363d] items-center hover:bg-[#161b22] cursor-pointer text-sm">
-                <div class="col-span-6 flex items-center space-x-2 text-white font-medium">
-                    <span>📄</span>
-                    <span class="text-blue-400 hover:underline">README.md</span>
-                </div>
-                <div class="col-span-4 text-[#8b949e] text-xs truncate">docs: urgent emotional manifesto & cat gallery</div>
-                <div class="col-span-2 text-right text-[#8b949e] text-xs">Just now</div>
-            </div>
-            <!-- File 2 -->
-            <div onclick="switchTab('config')" class="grid grid-cols-12 px-4 py-3 border-b border-[#30363d] items-center hover:bg-[#161b22] cursor-pointer text-sm">
-                <div class="col-span-6 flex items-center space-x-2 text-white font-medium">
-                    <span>⚙️</span>
-                    <span class="text-blue-400 hover:underline">crush.config.ts</span>
-                </div>
-                <div class="col-span-4 text-[#8b949e] text-xs truncate">feat: set admiration level to MAXIMUM</div>
-                <div class="col-span-2 text-right text-[#8b949e] text-xs">2 mins ago</div>
-            </div>
-            <!-- File 3 -->
-            <div onclick="switchTab('valentine')" class="grid grid-cols-12 px-4 py-3 items-center hover:bg-[#161b22] cursor-pointer text-sm">
-                <div class="col-span-6 flex items-center space-x-2 text-white font-medium">
-                    <span>💌</span>
-                    <span class="text-pink-400 hover:underline font-bold">ROMANTIC_LETTER.md</span>
-                </div>
-                <div class="col-span-4 text-[#8b949e] text-xs truncate">feat(feelings): open this when you're bored</div>
-                <div class="col-span-2 text-right text-[#8b949e] text-xs">Right now</div>
-            </div>
-        </div>
-
-        <!-- Viewer Tabs -->
-        <div id="viewer-container" class="bg-[#161b22] border border-[#30363d] rounded-lg p-6 md:p-10 shadow-2xl">
-
-            <!-- README.md Tab Content -->
-            <div id="tab-readme" class="space-y-6">
-                <div class="border-b border-[#30363d] pb-4 flex justify-between items-center">
-                    <h1 class="text-2xl font-bold text-white">🐱 Welcome to My Heart Repository</h1>
-                    <span class="bg-pink-500/20 text-pink-300 border border-pink-500/30 px-3 py-1 rounded-full text-xs font-semibold">Status: Mildly Panicking</span>
-                </div>
-                
-                <div class="bg-[#0d1117] p-4 rounded border border-[#30363d] text-sm text-[#8b949e] italic">
-                    ⚠️ <strong>System Warning:</strong> Attempting to run this repository without coffee or a sense of humor may result in uncontrollable smiling.
-                </div>
-
-                <h3 class="text-lg font-semibold text-white mt-6">✨ Mandatory Emotional Disclaimer (Read before cloning)</h3>
-                <p class="text-sm leading-relaxed text-[#c9d1d9]">
-                    Look, I wanted to tell you how I feel, but my anxiety threw a <code>Segmentation Fault</code> every time I tried to say it in person. So, being a certified programmer/overthinker, I built an entire GitHub repo instead. If there are bugs, it's a feature.
-                </p>
-
-                <h3 class="text-lg font-semibold text-white mt-6">📸 Emergency Pinterest Cat Gallery (For Maximum Serotonin)</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2">
-                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
-                        <p class="text-xs text-pink-300 font-semibold">"Are you a Wi-Fi signal? Because I'm feeling a strong connection whenever you're nearby."</p>
-                    </div>
-                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
-                        <p class="text-xs text-pink-300 font-semibold">"Are you a syntax error? Because you completely stop my execution."</p>
-                    </div>
-                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
-                        <p class="text-xs text-pink-300 font-semibold">"Are you my compiler? Because you bring all my scattered thoughts together."</p>
-                    </div>
-                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
-                        <p class="text-xs text-pink-300 font-semibold">"Even if all my loops are infinite, my heart loops exclusively around you."</p>
-                    </div>
-                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
+‎<!DOCTYPE html>
+‎<html lang="en">
+‎<head>
+‎    <meta charset="UTF-8">
+‎    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+‎    <title>git push origin heart --force ❤️</title>
+‎    <script src="https://cdn.tailwindcss.com"></script>
+‎    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+‎    <style>
+‎        body { font-family: 'Inter', sans-serif; }
+‎        .code-font { font-family: 'Fira Code', monospace; }
+‎        .cat-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+‎    </style>
+‎</head>
+‎<body class="bg-[#0d1117] text-[#c9d1d9] min-h-screen flex flex-col">
+‎
+‎    <!-- GitHub Header Navbar -->
+‎    <header class="bg-[#161b22] border-b border-[#30363d] px-4 py-3 flex items-center justify-between">
+‎        <div class="flex items-center space-x-3">
+‎            <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+‎            <span class="font-semibold text-white text-lg">empot / <span class="text-pink-400">for-you.git</span></span>
+‎            <span class="text-xs px-2 py-0.5 rounded-full bg-[#30363d] text-[#8b949e] border border-[#484f58]">Public</span>
+‎        </div>
+‎        <div class="flex items-center space-x-3 text-sm">
+‎            <button class="bg-[#21262d] border border-[#30363d] px-3 py-1 rounded-md text-white hover:bg-[#30363d]">⭐ Star <span class="bg-[#30363d] px-1.5 py-0.2 rounded text-xs ml-1">1.4k</span></button>
+‎            <button class="bg-[#21262d] border border-[#30363d] px-3 py-1 rounded-md text-white hover:bg-[#30363d]">🍴 Fork <span class="bg-[#30363d] px-1.5 py-0.2 rounded text-xs ml-1">99+</span></button>
+‎        </div>
+‎    </header>
+‎
+‎    <!-- Main Container -->
+‎    <main class="max-w-6xl mx-auto p-4 md:p-8 flex-grow w-full">
+‎
+‎        <!-- Repo Subnav Tabs -->
+‎        <div class="flex border-b border-[#30363d] mb-6 space-x-6 text-sm">
+‎            <a href="#" class="border-b-2 border-pink-500 pb-3 font-semibold text-white flex items-center space-x-2"><span>📁 Code</span></a>
+‎            <a href="#" class="text-[#8b949e] hover:text-white pb-3 flex items-center space-x-2" onclick="alert('Commits history: 1) Initial commit (natakot pero sinabi na din), 2) Added infinite cat pictures, 3) Realized na ayoko mawalan ng Empot')">📜 Commits <span class="bg-[#30363d] px-1.5 py-0.2 rounded-full text-xs">3</span></a>
+‎            <a href="#" class="text-[#8b949e] hover:text-white pb-3 flex items-center space-x-2" onclick="alert('Pull Requests: 1 open PR awaiting your approval: Merge heart into Empot life (Status: Pending your decision)')">🔀 Pull Requests <span class="bg-pink-900 text-pink-200 px-1.5 py-0.2 rounded-full text-xs">1</span></a>
+‎        </div>
+‎
+‎        <!-- Repository File Structure Banner -->
+‎        <div class="bg-[#161b22] border border-[#30363d] rounded-t-lg p-3 flex items-center justify-between text-xs text-[#8b949e]">
+‎            <div class="flex items-center space-x-2">
+‎                <span class="font-bold text-white">main</span>
+‎                <span>•</span>
+‎                <span>3 files • 1,000,000 lines of pure honesty</span>
+‎            </div>
+‎            <div class="code-font text-pink-400">Last commit: fix(heart): nauna ang tapang kaysa takot</div>
+‎        </div>
+‎
+‎        <!-- File Explorer Table -->
+‎        <div class="border border-t-0 border-[#30363d] rounded-b-lg bg-[#0d1117] mb-8 overflow-hidden">
+‎            <div class="grid grid-cols-12 px-4 py-2.5 border-b border-[#30363d] bg-[#161b22] text-xs font-semibold text-[#8b949e]">
+‎                <div class="col-span-6">Name</div>
+‎                <div class="col-span-4">Last commit message</div>
+‎                <div class="col-span-2 text-right">Updated</div>
+‎            </div>
+‎            <!-- File 1 -->
+‎            <div onclick="switchTab('readme')" class="grid grid-cols-12 px-4 py-3 border-b border-[#30363d] items-center hover:bg-[#161b22] cursor-pointer text-sm">
+‎                <div class="col-span-6 flex items-center space-x-2 text-white font-medium">
+‎                    <span>📄</span>
+‎                    <span class="text-blue-400 hover:underline">README.md</span>
+‎                </div>
+‎                <div class="col-span-4 text-[#8b949e] text-xs truncate">docs: emotional manifesto & cat gallery para kay Empot</div>
+‎                <div class="col-span-2 text-right text-[#8b949e] text-xs">Just now</div>
+‎            </div>
+‎            <!-- File 2 -->
+‎            <div onclick="switchTab('config')" class="grid grid-cols-12 px-4 py-3 border-b border-[#30363d] items-center hover:bg-[#161b22] cursor-pointer text-sm">
+‎                <div class="col-span-6 flex items-center space-x-2 text-white font-medium">
+‎                    <span>⚙️</span>
+‎                    <span class="text-blue-400 hover:underline">empot.config.ts</span>
+‎                </div>
+‎                <div class="col-span-4 text-[#8b949e] text-xs truncate">feat: set affection level to EMPOT_MAX</div>
+‎                <div class="col-span-2 text-right text-[#8b949e] text-xs">2 mins ago</div>
+‎            </div>
+‎            <!-- File 3 -->
+‎            <div onclick="switchTab('valentine')" class="grid grid-cols-12 px-4 py-3 items-center hover:bg-[#161b22] cursor-pointer text-sm">
+‎                <div class="col-span-6 flex items-center space-x-2 text-white font-medium">
+‎                    <span>💌</span>
+‎                    <span class="text-pink-400 hover:underline font-bold">DEAR_EMPOT.md</span>
+‎                </div>
+‎                <div class="col-span-4 text-[#8b949e] text-xs truncate">feat(feelings): open mo to kapag bini-bini ka na</div>
+‎                <div class="col-span-2 text-right text-[#8b949e] text-xs">Right now</div>
+‎            </div>
+‎        </div>
+‎
+‎        <!-- Viewer Tabs -->
+‎        <div id="viewer-container" class="bg-[#161b22] border border-[#30363d] rounded-lg p-6 md:p-10 shadow-2xl">
+‎
+‎            <!-- README.md Tab Content -->
+‎            <div id="tab-readme" class="space-y-6">
+‎                <div class="border-b border-[#30363d] pb-4 flex justify-between items-center">
+‎                    <h1 class="text-2xl font-bold text-white">🐱 Welcome to Empot Heart Repository</h1>
+‎                    <span class="bg-pink-500/20 text-pink-300 border border-pink-500/30 px-3 py-1 rounded-full text-xs font-semibold">Status: Overthinking malala</span>
+‎                </div>
+‎                
+‎                <div class="bg-[#0d1117] p-4 rounded border border-[#30363d] text-sm text-[#8b949e] italic">
+‎                    ⚠️ <strong>System Warning:</strong> May kasamang puyat, pagka-overthink, at mga pusa dahil cute ka rin naman.
+‎                </div>
+‎
+‎                <h3 class="text-lg font-semibold text-white mt-6">✨ Cat Gallery (Kasi sabi mo cute cute mo sa baby pics mo)</h3>
+‎                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2">
+‎                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
+‎                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
+‎                        <p class="text-xs text-pink-300 font-semibold">"Utol kita utol kita... pero seryoso, gustong-gusto kita."</p>
+‎                    </div>
+‎                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
+‎                        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
+‎                        <p class="text-xs text-pink-300 font-semibold">"Kahit may trust issues ako, sa'yo lang ako naging ganito ka-unfiltered."</p>
+‎                    </div>
+‎                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
+‎                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
+‎                        <p class="text-xs text-pink-300 font-semibold">"Mawawala yung empot ko kung magkakarelationship tayo kaya nag-settle ako sa friendship."</p>
+‎                    </div>
+‎                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
+‎                        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
+‎                        <p class="text-xs text-pink-300 font-semibold">"Nung nasa bus ka at nagsusuka ka, nagpapanic ako kasi care na care ko talaga ikaw."</p>
+‎                    </div>
+‎                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
+‎                        <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
+‎                        <p class="text-xs text-pink-300 font-semibold">"Sana sa susunod mauna yung tapang ko kaysa takot sa sasabihin ng iba."</p>
+‎                    </div>
+‎                    <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
+‎                        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
+‎                        <p class="text-xs text-pink-300 font-semibold">"Ms. Mitch Nicole Marcos AKA Empot, ikaw ang paborito ko."</p>
+‎                    </div>
+‎                </div>
+‎            </div>
+‎
+‎            <!-- empot.config.ts Tab Content -->
+‎            <div id="tab-config" class="hidden space-y-4">
+‎                <div class="border-b border-[#30363d] pb-4 flex justify-between items-center">
+‎                    <h2 class="text-xl font-bold text-white code-font">empot.config.ts</h2>
+‎                    <span class="text-xs text-[#8b949e]">TypeScript Config File</span>
+‎                </div>
+‎                <pre class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] code-font text-sm text-[#e6edf3] overflow-x-auto"><code><span class="text-[#ff7b72]">export const</span> <span class="text-[#79c0ff]">EmpotProfile</span> = {
+‎    <span class="text-[#d2a8ff]">name</span>: <span class="text-[#a5d6ff]">"Mitch Nicole Marcos (Empot)"</span>,
+‎    <span class="text-[#d2a8ff]">cuteBabyPics</span>: <span class="text-[#79c0ff]">true</span>,
+‎    <span class="text-[#d2a8ff]">statusAsUtol</span>: <span class="text-[#a5d6ff]">"Alibi lang para di mawala"</span>,
+‎    <span class="text-[#d2a8ff]">overthinkLevel</span>: <span class="text-[#79c0ff]">Infinity</span>,
+‎    <span class="text-[#d2a8ff]">careLevel</span>: <span class="text-[#a5d6ff]">"Nagaask kung nakauwi ka na pag sumusuka sa bus"</span>,
+‎    
+‎    <span class="text-[#ff7b72]">async</span> <span class="text-[#d2a8ff]">runConfession</span>() {
+‎        <span class="text-[#ff7b72]">while</span> (<span class="text-[#79c0ff]">true</span>) {
+‎            <span class="text-[#ff7b72]">await</span> <span class="text-[#79c0ff]">this</span>.<span class="text-[#dfb15b]">gustoKoTalagaSya</span>();
+‎        }
+‎    }
+‎};</code></pre>
+‎            </div>
+‎
+‎            <!-- DEAR_EMPOT.md Tab Content -->
+‎            <div id="tab-valentine" class="hidden space-y-6">
+‎                <div class="border-b border-[#30363d] pb-4 flex justify-between items-center">
+‎                    <h2 class="text-xl font-bold text-pink-400">💌 DEAR_EMPOT.md</h2>
+‎                    <span class="bg-pink-500/20 text-pink-300 border border-pink-500/30 px-3 py-1 rounded-full text-xs">To: Empot</span>
+‎                </div>
+‎
+‎                <div class="prose prose-invert max-w-none space-y-4 text-[#c9d1d9] leading-relaxed text-sm md:text-base">
+‎                    <p class="text-lg font-medium text-white">Hi BFF,</p>
+‎                    
+‎                    <p>
+‎                        Kahit parang sirang plaka na i want to be really honest, gustong-gusto talaga kita kahit dati pa ewan ko ba may mga kaibigan naman talaga akong babae pero kasi ano wala naman me naramdaman sa kanila kahit ganon. Tas sayo alam mo lagi ko sinasabi sa sarili ko na utol kita utol kita pero sa totoo lang huhu natatakot lang ako na masira friendship natin kahit di na bilang kung ila beses ko na nasabi na crush kita sasabihin ko joke o kaya randomly sasabihin ko na miss kita. Seryoso ako dun kaso gaya nga ng sabi mo <em>"sana sa susunod mauna yung tapang ko kesa sa takot sa sasabihin ng iba"</em> nauna yung takot ko hahahah kase ang over thinker ko alam mu ba ang nasa utak ko nun yung first time ko magconfess sayo na tinawanan mo ako tas ang ano pa kase hindi pa directly sayo sa Friend mo pa kase nga (ala may trust issues ako eh) pero alam ko naman na totoo din yung naging respond mo nun.
+‎                    </p>
+‎                    <p>
+‎                        Kaso pano kasi kung maghiwalay tayo nun kung magkakarelationship tayo edi... Mawawala yung empot ko. Mas pinili ko nalang magsettle sa friendship kase ayoko mawala ka sa life ko. Kaya sa tanong mo na bff pa din kaya tayo if may asawa na tayo eh pano kung tayo yung mag asawa. Tas alam mo hahaha nahihiya ako kase ano nagiging honest nako sayo sa feelings ko pero sa sobrsng honest ko sayo nasabi ko din yung pagiging mess of a person ko. Kasi i feel the most comfortable when i talk to you that's why I'm unfiltered.
+‎                    </p>
+‎                    <p>
+‎                        Alam mu hahaha it may not strike you pero the most memorable memory sayo is yung di naman tayo nagusap masyado nun tas nasa jeep ako nun tas andun ka lang, tas yung nasa bus ka nun tas nagsusuka nagpapanic ako nun kase nga siyempre ala naman ako dun to help kaya constantly ako nagaask kung okay ka na saan ka na and if nakauwi ka na kasi, i care for you so much. Tiyaka ano hahaha alam mo ba dun ko na naisip ah taina okay di naman ako ganito eh tas napaisip nako one day randomly magcoconfess ako sayo ng lahat ng naramdaman ko tas long message tas hindi mo aasahan kaso di nangyare pero I'm still happy kase i had the courage na to say it.
+‎                    </p>
+‎                    <p>
+‎                        Tiyaka alam mo ba kahit ano minsan napupunta ko sa SJ di ko nasasabi kaso ano i really want to date you na ano ako bahala sa lahat tas may dalang flowers eh kaso hindi ko nagagawa. Tas minsan ang gago ko pa magkuwento sayo kung sino sino tas alam mo talagang totoo din eh kasi pinapakita ko pa... Ih I don't have any excuse for that other than that i really wanted to stay as friends and keep it a secret forever nalang. Kain susi tapon padlock ganon pero eh that changed eh.
+‎                    </p>
+‎                    <p>
+‎                        It may be hard to believe pero Ms. Mitch Nicole Marcos AKA Empot na nakasave sakin lahat ng baby pics cute cute mo dun.
+‎                    </p>
+‎                    <p class="font-bold text-pink-400 pt-2">
+‎                        I love you ❤️
+‎                    </p>
+‎                    
+‎                    <div class="pt-6 border-t border-[#30363d] flex flex-col sm:flex-row items-center justify-between gap-4">
+‎                        <div class="text-sm text-[#8b949e]">
+‎                            BFF pa rin ba o tayo na mag-asawa? 🥺💍
+‎                        </div>
+‎                        <div class="flex space-x-3">
+‎                            <button onclick="triggerAccept()" class="bg-pink-600 hover:bg-pink-500 text-white px-6 py-2.5 rounded-md font-bold shadow-lg transition transform hover:scale-105">
+‎                                ❤️ Merge Pull Request (Tayo na!)
+‎                            </button>
+‎                            <button onclick="triggerDecline(this)" class="bg-[#21262d] hover:bg-[#30363d] text-white px-4 py-2.5 rounded-md text-sm border border-[#30363d] transition">
+‎                                Close PR (Utol zone)
+‎                            </button>
+‎                        </div>
+‎                    </div>
+‎                </div>
+‎            </div>
+‎
+‎        </div>
+‎    </main>
+‎
+‎    <!-- Footer -->
+‎    <footer class="border-t border-[#30363d] py-6 text-center text-xs text-[#8b949e] mt-auto bg-[#161b22]">
+‎        <p>Built with ❤️ para kay Empot. Powered by GitHub (Git Gut at Flirting).</p>
+‎    </footer>
+‎
+‎    <!-- Celebration Modal / Animation Script -->
+‎    <div id="celebration-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+‎        <div class="bg-[#161b22] border border-pink-500/50 rounded-2xl p-8 max-w-md text-center space-y-4 shadow-2xl animate-bounce-short">
+‎            <div class="text-6xl">🎉😻💖</div>
+‎            <h2 class="text-2xl font-bold text-white">SUCCESS: Hindi na mawawala si Empot!</h2>
+‎            <p class="text-sm text-[#c9d1d9]">
+‎                Na-merge na ang pull request sa puso ni Empot! Walang natirang takot, tapos na ang overthinking. Let's go! 🍕☕
+‎            </p>
+‎            <button onclick="closeModal()" class="bg-pink-600 hover:bg-pink-500 text-white px-6 py-2 rounded-lg font-semibold w-full">
+‎                Yehey! 🚀
+‎            </button>
+‎        </div>
+‎    </div>
+‎
+‎    <script>
+‎        function switchTab(tabName) {
+‎            ['readme', 'config', 'valentine'].forEach(t => {
+‎                document.getElementById('tab-' + t).classList.add('hidden');
+‎            });
+‎            document.getElementById('tab-' + tabName).classList.remove('hidden');
+‎        }
+‎
+‎        function triggerAccept() {
+‎            document.getElementById('celebration-modal').classList.remove('hidden');
+‎            document.getElementById('celebration-modal').classList.add('flex');
+‎        }
+‎
+‎        function closeModal() {
+‎            document.getElementById('celebration-modal').classList.add('hidden');
+‎            document.getElementById('celebration-modal').classList.remove('flex');
+‎        }
+‎
+‎        let runCount = 0;
+‎        function triggerDecline(btn) {
+‎            runCount++;
+‎            const phrases = [
+‎                "Nice try! Utol zone disabled 😂", 
+‎                "Error 404: Bawal tumanggi", 
+‎                "Only 'YES / TAYO NA' is allowed ❤️",
+‎                "Resistance is futile, Empot!"
+‎            ];
+‎            btn.innerText = phrases[runCount % phrases.length];
+‎            btn.style.transform = `translate(${Math.random() * 80 - 40}px, ${Math.random() * 40 - 20}px)`;
+‎        }
+‎    </script>
+‎</body>
+‎</html>
+‎              <div class="cat-card bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden p-3 text-center">
                         <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?w=400&auto=format&fit=crop&q=80" alt="Cute Cat" class="rounded-lg h-48 w-full object-cover mb-3">
                         <p class="text-xs text-pink-300 font-semibold">"You must be a software update, because every time I see you, my day gets a major upgrade."</p>
                     </div>
